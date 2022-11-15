@@ -1,0 +1,433 @@
+@charset "UTF-8";
+
+/*--------------------------------------------------------------
+    TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Settings: used with preprocessors and contain font, colors definitions, etc.
+2.0 - Tools: globally used mixins and functions. Use for preprocessor only.
+3.0 - Generic: reset and/or normalize styles, box-sizing definition, etc. 
+        -UNIVERSAL
+4.0 - Elements: styling for bare/generic HTML elements 
+        - Typography: Headings, Paragraphs, Blockquotes, Anchors
+5.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
+        - Framework
+6.0 - Components: specific designed components
+        -NAV
+        -HERO
+        -FEATURES
+        -WORKS
+        -FOOTER
+7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+        - Screen Reader	    
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+    3.0 - GENERIC
+-------------------------------------------------------------- */
+
+/* ----- UNIVERSAL ----- */
+
+*,
+*:after,
+*:before{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+html{
+        font: 300 1rem/.5rem 'Open Sans', sans-serif;
+}
+
+/*--------------------------------------------------------------
+    4.0 - ELEMENT
+-------------------------------------------------------------- */
+
+h2,
+h3{
+        font-weight: 700;
+}
+
+h1,
+#hero p,
+footer p{
+        color: #fff;
+}
+
+h1,
+#features> .wrapper >header,
+#works header{
+        text-align: center;
+}
+
+/* ----- TYPOGRAPHY ----- */
+
+h1{
+        font-size: 2.6rem;
+        margin: 0;
+}
+
+h2{
+        font-size: 1.2rem;  
+        border-bottom: solid 1px #717982;
+        padding: 0 1rem 2rem 1rem;
+        color: #1EA78D;
+        text-transform: uppercase;
+        display: inline-block;
+}
+
+h3{
+        font-size: 1rem;
+        color: #1E1E1E;
+        margin-top: 2em;
+}
+
+p{
+        font-size: .9rem;
+        line-height: 1.7rem;
+        color: #717982;
+}
+
+b{
+     font-weight: 800;   
+}
+
+
+
+@media screen and (min-width:1024px){
+        
+        h1{
+                font-size: 4rem;
+        }
+
+        h2{
+                font-size: 2rem;  
+        }
+        
+}
+
+/*--------------------------------------------------------------
+    6.0 - OBJECTS
+-------------------------------------------------------------- */
+
+/* ----- FRAMEWORK ----- */
+
+.wrapper{
+        width: 99%;
+        margin: 0 auto;
+}
+
+.row{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+}
+
+
+[class*="col-"]{
+        padding: 0 10px;
+        margin-bottom: 20px;
+        background-clip: content-box;
+}
+
+.col-sm-1{
+        width: calc(100% * 1/12);
+}
+
+.col-sm-2{
+        width: calc(100% * 2/12);
+}
+
+.col-sm-3{
+        width: calc(100% * 3/12);
+}
+
+.col-sm-4{
+        width: calc(100% * 4/12);
+}
+
+.col-sm-5{
+        width: calc(100% * 5/12);
+}
+
+.col-sm-6{
+        width: calc(100% * 6/12);
+}
+
+.col-sm-7{
+        width: calc(100% * 7/12);
+}
+
+.col-sm-8{
+        width: calc(100% * 8/12);
+}
+
+.col-sm-9{
+        width: calc(100% * 9/12);
+}
+
+.col-sm-10{
+        width: calc(100% * 10/12);
+}
+
+.col-sm-11{
+        width: calc(100% * 11/12);
+}
+
+.col-sm-12{
+        width: calc(100%);
+}
+
+
+
+@media screen and (min-width:1024px){
+
+        .wrapper{
+                width: 80%;
+                margin: 0 auto;
+        }
+
+        .col-lg-1{
+                width: calc(100% * 1/12);
+        }
+        
+        .col-lg-2{
+                width: calc(100% * 2/12);
+        }
+        
+        .col-lg-3{
+                width: calc(100% * 3/12);
+        }
+        
+        .col-lg-4{
+                width: calc(100% * 4/12);
+        }
+        
+        .col-lg-5{
+                width: calc(100% * 5/12);
+        }
+        
+        .col-lg-6{
+                width: calc(100% * 6/12);
+        }
+        
+        .col-lg-7{
+                width: calc(100% * 7/12);
+        }
+        
+        .col-lg-8{
+                width: calc(100% * 8/12);
+        }
+        
+        .col-lg-9{
+                width: calc(100% * 9/12);
+        }
+        
+        .col-lg-10{
+                width: calc(100% * 10/12);
+        }
+        
+        .col-lg-11{
+                width: calc(100% * 11/12);
+        }
+        
+        .col-lg-12{
+                width: calc(100%);
+        }
+}
+
+.img-responsive{
+        width: 100%;
+}
+
+/*--------------------------------------------------------------
+    6.0 - COMPONENTS
+-------------------------------------------------------------- */
+
+
+
+#features .col-lg-2,
+#festures .col-sm-6,
+#works .col-lg-2,
+#works .col-sm-5,
+#works .col-lg-7{
+        margin: 0 auto;
+}
+
+nav,
+#hero,
+#works p{
+        text-align: center;
+}
+
+
+/* ----- NAV ----- */
+
+#nav .row{
+        justify-content: center;
+}
+
+#nav{
+        background: #10443F;
+}
+
+#nav .wrapper{
+        padding-top: 1em;
+        align-items: center;
+}
+
+nav  {
+        display: inline;
+}
+
+nav ul {
+        list-style-type: none;
+        padding: 0;
+}
+
+header nav li {
+        display: inline-block;
+        margin: 0 1em;
+}
+
+a {
+        text-decoration: none;
+        color: #fff;
+}
+
+a:hover{
+        border-bottom: solid 2px #fff;
+        padding-bottom: .5rem;
+}
+
+@media screen and (min-width:1024px){
+        #nav .row{
+                justify-content: space-between;
+        }
+        
+        nav{
+                text-align: right ;
+        }
+   
+}
+
+/* ----- HERO ----- */
+
+#hero p:last-child::before,
+#hero p:last-child::after{
+        content: '';
+        width: 25px;
+        height: 2px;
+        background-color: #1EA78D;
+        display: block;
+        position: absolute;
+        top: 13px;
+
+}
+
+#hero{
+        background: #104F41;
+}
+
+#hero p{
+        margin: 1.5em 0 0 0;
+}
+
+#hero .wrapper{
+        padding: 10em 0 6em 0;
+}
+
+
+#hero p:last-child{
+        position: relative;
+        top: 0;
+        left: 0;
+        display: inline-block;
+}
+
+#hero p:last-child::before{
+        left: -40px;
+}
+
+#hero p:last-child::after{
+        right: -40px;
+}
+
+#hero p:first-of-type{
+        font-weight: 300;
+        font-size: 1.5rem;
+}
+
+#hero span{
+        color: #1EA78D;
+}
+
+@media screen and (min-width:1024px){
+
+        #hero p{
+                margin-top: 1em;
+        }
+
+        #hero p:first-of-type{
+                font-size: 3rem;
+                margin-bottom: .5em;
+        }
+        
+}
+
+/* ----- FEATURES ----- */
+
+#features{
+        background: #F4F7F9;
+        padding: 5rem 0;
+}
+
+/* ----- WORKS ----- */
+
+#works {
+        padding: 5em 0;
+}
+
+#works p{
+        padding: 1em 0 3em 0;
+}
+
+/* ----- FOOTER ----- */
+
+footer{
+        background: #1EA78D;
+        border-top: solid 3px #10443F;
+}
+
+
+footer .wrapper{
+        padding: 5em 0 ;
+}
+
+footer span{
+        vertical-align: sub;
+}
+
+/*--------------------------------------------------------------
+    7.0 - UTILITY
+-------------------------------------------------------------- */
+
+/* ----- SCREEN READER ----- */
+
+.sr-only {
+        position: absolute;
+          position: absolute !important;
+          width: 1px !important;
+          height: 1px !important;
+          padding: 0 !important;
+          margin: -1px !important;
+          overflow: hidden !important;
+          clip: rect(0,0,0,0) !important;
+          white-space: nowrap !important;
+          border: 0 !important;
+}
+
+
+
